@@ -62,7 +62,7 @@
         <p>...</p>
 </div>
 
-   <html lang="en">
+<html lang="en">
 <head>
 <style>
   /* 1. Container: hides overflow and sets width */
@@ -74,6 +74,8 @@
     padding: 10px 0;
     white-space: nowrap;
     box-sizing: border-box;
+    .content { flex: 1; } /* Pushes footer down */
+    .footer { flex-shrink: 0; } /* Keeps footer at bottom */
   }
 
   /* 2. Content wrapper: flex layout for items */
@@ -126,6 +128,7 @@
 
 </body>
 </html>
+
 
 
 
