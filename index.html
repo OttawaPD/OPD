@@ -6,8 +6,10 @@
   body {
     background-image: url('background.jpg'); /* Replace with your image URL or relative path, e.g., 'images/background.jpg' */
     background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    margin: 0;
     color: white; /* Ensures text is visible against a dark background */
     font-family: Arial, sans-serif;
     text-align: center;
@@ -36,6 +38,91 @@
   <p>Here is the link to the Excel file:</p>
   <!-- Replace # with your actual OneDrive "Anyone with the link" URL and change the link text as desired -->
   <a href="#" target="_blank" rel="noopener noreferrer">View Excel File on OneDrive</a>
+</div>
+
+</body>
+
+</head>
+<body>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+    </div>
+
+   <html lang="en">
+<head>
+<style>
+  /* 1. Container: hides overflow and sets width */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  /* 2. Content wrapper: flex layout for items */
+  .marquee-content {
+    display: inline-flex;
+    animation: scroll-left 15s linear infinite;
+  }
+
+  /* 3. Items: styled links */
+  .marquee-item {
+    padding: 0 2rem;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  .marquee-item:hover {
+    text-decoration: underline;
+  }
+
+  /* Pause on hover */
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  /* 4. Keyframes: move from right to left */
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
+</head>
+<body>
+
+<div class="marquee-container">
+  <div class="marquee-content">
+    <!-- Items -->
+    <a href="#" class="marquee-item">⚡ Info 1: Special Offer</a>
+    <a href="#" class="marquee-item">🔥 Info 2: New Release</a>
+    <a href="#" class="marquee-item">💡 Info 3: Upcoming Event</a>
+    <a href="#" class="marquee-item">🚀 Info 4: Updated Terms</a>
+    
+    <!-- Duplicate Items for Seamless Loop -->
+    <a href="#" class="marquee-item">⚡ Info 1: Special Offer</a>
+    <a href="#" class="marquee-item">🔥 Info 2: New Release</a>
+    <a href="#" class="marquee-item">💡 Info 3: Upcoming Event</a>
+    <a href="#" class="marquee-item">🚀 Info 4: Updated Terms</a>
+  </div>
 </div>
 
 </body>
