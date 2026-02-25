@@ -39,41 +39,78 @@
   <a href="https://ottawapdfdorg.sharepoint.com/:f:/s/ottawapdfd.org/IgC5mqgdb_XqSo6ZURTF9JiAAXq4u0GhdbRP3T9pWIZTXsI?e=2DgCMn" target="_blank" rel="noopener noreferrer">OPD LINKS</a>
 
 </div>
+<style>
+  /* Container pinned to the right side of the screen */
+  .sticky-sidebar {
+    position: fixed;
+    right: 20px;
+    top: px;
+    width: 200px;
+    height: 90vh; /* Limits the area where notes can live */
+    z-index: 1000;
+  }
 
+  .note {
+    position: sticky; /* Makes them stick relative to the sidebar */
+    background: #ffeb3b;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    min-height: 100px;
+  }
+
+  /* Adjustable Offsets: Each note needs a different 'top' to stack */
+  .note-1 { top: 0px; }
+  .note-2 { top: 120px; background: #9eff3b; }
+  .note-3 { top: 240px; background: #3be0ff; }
+</style>
+
+<div class="sticky-sidebar">
+  <div class="note note-1">From the Boss: do your job.</div>
+  <div class="note note-2">From hoster: stop picking ur nose.</div>
+  <div class="note note-3">Kyle said: Malaka.</div>
+</div>
 
 
         <p>  <p>
        
  <br>
  <br>
-<style>
-  .notes-board {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  .note {
-    background: #ffeb3b;
-    padding: 15px;
-    min-height: 200px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    transform: rotate(-1deg); /* Subtle tilt for effect */
-  }
-  .note:nth-child(even) { transform: rotate(2deg); } /* Vary the tilt */
-</style>
 
-<div class="notes-board">
-  <div class="note">Note 1 content...</div>
-  <div class="note">Note 2 content...</div>
-  <div class="note">Note 3 content...</div>
-</div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+<br>
+ <br>
+ <br>
+<br>
 
-<div style="position: relative; height: 500px;">
-  <div class="sticky-note">This note is at a custom location!</div>
-</div>
-
-       </div>
+     </div>
   <div class="wrapper">
     </div>
 </body>
@@ -140,15 +177,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
