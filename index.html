@@ -74,6 +74,12 @@
     padding: 10px 0;
     white-space: nowrap;
     box-sizing: border-box;
+    html { height: 100%; }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
     .content { flex: 1; } /* Pushes footer down */
     .footer { flex-shrink: 0; } /* Keeps footer at bottom */
   }
@@ -128,6 +134,7 @@
 
 </body>
 </html>
+
 
 
 
