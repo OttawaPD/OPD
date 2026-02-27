@@ -74,109 +74,102 @@
 
         <p>  <p>
        
- <br>
- <br>
 
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
-<br>
- <br>
- <br>
-<br>
-
-     </div>
-  <div class="wrapper">
-    </div>
-</body>
-   <html lang="en">
-<head>
+<!-- Bottom Scrolling Links (Pure CSS) -->
 <style>
-  /* 1. Container: hides overflow and sets width */
-  .marquee-container {
-    width: 100%;
+  :root {
+    --ticker-height: 48px;
+    --ticker-bg: #0f172a;           /* slate-900 */
+    --ticker-fg: #e2e8f0;           /* slate-200 */
+    --ticker-accent: #38bdf8;       /* sky-400 */
+    --ticker-speed: 30s;            /* lower = faster */
+  }
+
+  .ticker-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--ticker-height);
+    background: var(--ticker-bg);
+    color: var(--ticker-fg);
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    background: #333;
-    color: white;
-    padding: 10px 0;
-    white-space: nowrap;
-    box-sizing: border-box;
+    z-index: 9999;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   }
 
-  /* 2. Content wrapper: flex layout for items */
-  .marquee-content {
+  .ticker-label {
+    flex: 0 0 auto;
+    padding: 0 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .ticker-track {
+    position: relative;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ticker-content {
     display: inline-flex;
-    animation: scroll-left 15s linear infinite;
+    align-items: center;
+    gap: 1.25rem;
+    white-space: nowrap;
+    padding-left: 1rem;
+    /* the scrolling animation */
+    animation: ticker-scroll var(--ticker-speed) linear infinite;
   }
 
-  /* 3. Items: styled links */
-  .marquee-item {
-    padding: 0 2rem;
+  /* Duplicate the content for seamless looping */
+  .ticker-content > a {
+    color: var(--ticker-fg);
     text-decoration: none;
-    color: white;
-    font-family: sans-serif;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+  }
+  .ticker-content > a:focus,
+  .ticker-content > a:hover {
+    color: var(--ticker-accent);
+    background: rgba(255,255,255,0.06);
+    outline: none;
   }
 
-  .marquee-item:hover {
-    text-decoration: underline;
+  /* Pause on hover or when user prefers reduced motion */
+  .ticker-bar:hover .ticker-content { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-content { animation-duration: 0.001ms; }
   }
 
-  /* Pause on hover */
-  .marquee-container:hover .marquee-content {
-    animation-play-state: paused;
-  }
-
-  /* 4. Keyframes: move from right to left */
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); } /* We will duplicate items to make 50% = one full set */
   }
 </style>
-</head>
-<body>
 
-<div class="marquee-container">
-  <div class="marquee-content">
-    <!-- Items -->
-    <a href="https://ottawapdfdorg.sharepoint.com/:b:/s/ottawapdfd.org/IQDbOf08W6EvRIShgC07YrN9ARugEAFIZNPtnW7zRnB3TJw?e=m37AyZ" class="marquee-item">⚡ Info 1: Power Test Sign-UP April 2026 </a>
-    <a href="#" class="marquee-item">🔥 Info 2: New Release</a>
-    <a href="#" class="marquee-item">💡 Info 3: Upcoming Event</a>
-    <a href="#" class="marquee-item">🚀 Info 4: Updated Terms</a>
-    
-    <!-- Duplicate Items for Seamless Loop -->
-    <a href="https://ottawapdfdorg.sharepoint.com/:b:/s/ottawapdfd.org/IQDbOf08W6EvRIShgC07YrN9ARugEAFIZNPtnW7zRnB3TJw?e=m37AyZ" class="marquee-item">⚡ Info 1: Power Test APril 2026</a>
-    <a href="#" class="marquee-item">🔥 Info 2: New Release</a>
-    <a href="#" class="marquee-item">💡 Info 3: Upcoming Event</a>
-    <a href="#" class="marquee-item">🚀 Info 4: Updated Terms</a>
+<div class="ticker-bar" role="region" aria-label="Important links scroller">
+  <div class="ticker-label">Resources</div>
+  <div class="ticker-track">
+    <!-- IMPORTANT: duplicate the same set of links twice for seamless loop -->
+    <div class="ticker-content" aria-hidden="false">
+      <!-- Set A -->
+      <a href="Power Test April 2026.pdf" target="_blank" rel="noopener noreferrer">Power Test APRIL 2026</a>
+      <a href="/docs/policy.pdf" target="_blank" rel="noopener noreferrer">Security Policy (PDF)</a>
+      <a href="/reports/q4-summary.html" target="_blank" rel="noopener noreferrer">Q4 Summary (HTML)</a>
+      <a href="https://1drv.ms/u/s!your-onedrive-link-2" target="_blank" rel="noopener noreferrer">Design Specs (OneDrive)</a>
+      <a href="/docs/handbook.pdf" target="_blank" rel="noopener noreferrer">Employee Handbook (PDF)</a>
+
+      <!-- Set B (duplicate of Set A) -->
+      <a href="https://1drv.ms/u/s!your-onedrive-link-1" target="_blank" rel="noopener noreferrer">Project Charter (OneDrive)</a>
+      <a href="/docs/policy.pdf" target="_blank" rel="noopener noreferrer">Security Policy (PDF)</a>
+      <a href="/reports/q4-summary.html" target="_blank" rel="noopener noreferrer">Q4 Summary (HTML)</a>
+      <a href="https://1drv.ms/u/s!your-onedrive-link-2" target="_blank" rel="noopener noreferrer">Design Specs (OneDrive)</a>
+      <a href="/docs/handbook.pdf" target="_blank" rel="noopener noreferrer">Employee Handbook (PDF)</a>
+    </div>
   </div>
 </div>
-</body>
-</html>
-
-
-
